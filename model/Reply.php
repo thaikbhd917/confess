@@ -14,19 +14,13 @@ class Reply{
     
   }
 
-    /**
-     * @return mixed
-     */
+
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     *
-     * @return self
-     */
+
     public function setId($id)
     {
         $this->id = $id;
@@ -34,19 +28,12 @@ class Reply{
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
     public function getReply()
     {
         return $this->reply;
     }
 
-    /**
-     * @param mixed $reply
-     *
-     * @return self
-     */
+
     public function setReply($reply)
     {
         $this->reply = $reply;
@@ -54,19 +41,11 @@ class Reply{
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
     public function getReplyDate()
     {
         return $this->reply_date;
     }
 
-    /**
-     * @param mixed $reply_date
-     *
-     * @return self
-     */
     public function setReplyDate($reply_date)
     {
         $this->reply_date = $reply_date;
@@ -74,19 +53,13 @@ class Reply{
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getReplyMessageId()
     {
         return $this->reply_message_id;
     }
 
-    /**
-     * @param mixed $reply_message_id
-     *
-     * @return self
-     */
+
     public function setReplyMessageId($reply_message_id)
     {
         $this->reply_message_id = $reply_message_id;
