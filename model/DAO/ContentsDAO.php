@@ -12,7 +12,7 @@ class ContentsDAO
     {
         settype($offset, 'integer'); // anti SQL injection
 
-        global $conn;
+        $conn= getConnection();
         $MESSAGES = array(); // array chứa object message
         // property id message date
         $sql = "SELECT * FROM messages ORDER BY id DESC LIMIT 10 OFFSET $offset";
@@ -53,7 +53,7 @@ class ContentsDAO
                 }
             }
         }
-        
+        $conn->close();
         return $MESSAGES; // array object của model Message
     }
 }
