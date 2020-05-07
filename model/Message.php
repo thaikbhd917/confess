@@ -1,20 +1,21 @@
-<?php 
+<?php
 
-Class Message{
-	private $id;
-	private $message;
-	private $date;
-    private $react=array();
-    private $replies=array();
+class Message implements JsonSerializable
+{
+    private $id;
+    private $message;
+    private $date;
+    private $react = array();
+    private $replies = array();
 
 
 
-
-function __construct($id,$message,$date) {
-    $this->id = $id;
-    $this->message = $message;
-    $this->date = $date;
-  }
+    function __construct($id, $message, $date)
+    {
+        $this->id = $id;
+        $this->message = $message;
+        $this->date = $date;
+    }
 
     public function getId()
     {
@@ -43,7 +44,7 @@ function __construct($id,$message,$date) {
         return $this;
     }
 
- 
+
     public function getDate()
     {
         return $this->date;
@@ -78,10 +79,42 @@ function __construct($id,$message,$date) {
     }
 
 
+
     public function addReplies($replies)
     {
         $this->replies[] = $replies;
 
         return $this;
+    }
+
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
+    }
+    function countReactLike()
+    {
+        if ($this->react) {
+            $count = 0;
+            foreach ($this->react as $value) {
+
+                if ($value->getReactLike() == 1) {
+                    $count++;
+                }
+            }
+            return $count;
+        }
+    }
+    function countDisLike()
+    {
+        if ($this->react) {
+            $count = 0;
+            foreach ($this->react as $value) {
+
+                if ($value->getReactDislike = 1) {
+                    $count++;
+                }
+            }
+            return $count;
+        }
     }
 }

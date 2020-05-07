@@ -1,6 +1,6 @@
 <?php
 
-class ReplyDAO extends ContentsDAO{
+class Reply_DAO extends ContentsDAO{
     public function reply($reply,$reply_message_id){
         global $conn;
         $sql = "INSERT INTO replies(reply,reply_message_id) values(?,?)";

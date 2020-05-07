@@ -1,6 +1,10 @@
 <?php
-require "model/DAO/ContentsDAO.php";
+require_once "model/DAO/ContentsDAO.php";
+require_once "utility/cookies.php";
 
+
+$contents_dao = new ContentsDAO();
+$contents = $contents_dao->getMessageArray(0);
 
 ?>
 
@@ -13,25 +17,21 @@ require "model/DAO/ContentsDAO.php";
 
 <body>
 
-  confession page contents
-  <?php
-  $contents = new ContentsDAO();
-  $MESSAGES= $contents->getMessageArray(1);
-  foreach ($MESSAGES as $key => $mess) {
-    echo "[message section]";
-    echo $mess->getMessage();
-    echo "[reply section]";
-    $replies = $mess->getReplies();
+  confession page contents<br>
+<?php
 
-    if ($replies) {
-      echo $replies[1]->getReply();
-      echo "[another reply]";
-      echo $replies[0]->getReply();
-    }
-    echo "<br>";
+
+foreach($contents as $content){
+  $react = $content->getReact();
+  foreach($react as $value){
+    if($value->getUId()==2 && $value->getReactMessageId()==12){echo "you already liked";} // test disable like function
   }
 
-  ?>
+  }
+
+
+?>
+
 </body>
 
 </html>

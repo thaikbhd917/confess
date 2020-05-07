@@ -1,9 +1,9 @@
 <?php
 
-require "db_config.php"; //connect to db
-require __DIR__ . "/../Message.php";
-require __DIR__ . "/../Reply.php";
-require __DIR__ . "/../React.php";
+require_once "db_config.php"; //connect to db
+require_once __DIR__ . "/../Message.php";
+require_once __DIR__ . "/../Reply.php";
+require_once __DIR__ . "/../React.php";
 
 class ContentsDAO
 {
@@ -12,7 +12,7 @@ class ContentsDAO
     {
         settype($offset, 'integer'); // anti SQL injection
 
-        $conn= getConnection();
+        $conn = getConnection();
         $MESSAGES = array(); // array chứa object message
         // property id message date
         $sql = "SELECT * FROM messages ORDER BY id DESC LIMIT 10 OFFSET $offset";
@@ -55,6 +55,7 @@ class ContentsDAO
         }
         $conn->close();
         return $MESSAGES; // array object của model Message
+
+
     }
 }
-

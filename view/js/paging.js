@@ -1,11 +1,11 @@
 
-function confessionPost(loadContents) {
+function paging(offset) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            loadContents(this.responseText);
+            document.getElementById("contents").innerHTML = this.responseText;
         }
     };
-    xmlhttp.open("POST", "post.php", true);
+    xmlhttp.open("GET", "paging.php?offset="+offset, true);
     xmlhttp.send();
 }

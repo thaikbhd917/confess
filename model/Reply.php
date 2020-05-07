@@ -1,6 +1,7 @@
 <?php 
 	
-class Reply{
+class Reply implements JsonSerializable
+{
 	private $id;
 	private $reply;
 	private $reply_date;
@@ -66,6 +67,8 @@ class Reply{
 
         return $this;
     }
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
+    }
 }
-
- ?>

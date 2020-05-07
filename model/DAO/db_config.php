@@ -16,6 +16,3 @@ if ($conn->connect_error){
 echo "Connected successfully to databases<br>";
 return $conn;
 }
-
-
-?>

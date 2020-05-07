@@ -1,7 +1,12 @@
 <?php 
-    require "ContentsDAO.php";
+  
+    require_once "ContentsDAO.php";
 
-    class MessageDAO extends ContentsDAO{
+    class Message_DAO extends ContentsDAO{
+    public function __construct()
+    {
+        
+    }
     public function postMessage($message) // post Confession
     {
         if($message==null){die("error code VTI001: 内容を入力されていない");} // $message empty
@@ -16,4 +21,3 @@
     }
 
 }
-?>

@@ -1,4 +1,6 @@
 <?php
+
+
 class React_DAO extends ContentsDAO{
     public function like($react_message_id) //like
     {
@@ -23,4 +25,3 @@ class React_DAO extends ContentsDAO{
 
     }
 }
-?>
