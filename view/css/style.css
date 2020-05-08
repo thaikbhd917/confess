@@ -1,77 +1,19 @@
-
-.container{
-	display: inline;
-}
-#title{
-	margin-left: 22%;
-}
-#logo{
-	margin-left: 2%;	
-}
 body{
-	background:#c6e2ff;
+width: 100%;
+padding :30px;
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
 
-#logoleft{
-	margin-top: 5%;
-	margin-left:2%;
-}
-#cfs{
-	margin-left: 27%;
-}
-#footer{
-	text-align: center;
+.confession{
+    background-color: white;
+    -webkit-box-shadow: 10px 10px 300px 50px rgba(255,255,255,1);
+-moz-box-shadow: 10px 10px 300px 50px rgba(255,255,255,1);
+box-shadow: 10px 10px 300px 50px rgba(255,255,255,1);
+    overflow: auto;
 }
 
-.card-text{
-	border: 2px solid #ff0000;
-	word-wrap: break-word;
-	text-indent: 1%;
-}
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-
-  width: 100px;
-}
-
-/* The popup form - hidden by default */
-
-/* Add styles to the form container */
-.form-container {
-  max-width: 380px;
-  padding: 5px;
-  background-color: white;
-}
-
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 20%%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+header{margin-bottom: 20px;}
