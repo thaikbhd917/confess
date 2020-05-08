@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div class="accordion" id="myaccordion">
+
+<div class="card">
+    <div class="card-header btn"  data-toggle="collapse" data-target="#noidungcard1" aria-expanded="true" data-parent="#myaccordion">
+       Confession #2 (click to view reply)
+    </div>
+    <p><p class="card-text">Reply tuyệt vời Reply tuyệt vời ReplyReply tuyệt vời Reply tuyệt vời Reply tuyệt vời Reply tuyệt vờiReply tuyệt vời Reply tuyệt vời Reply tuyệt vời Reply tuyệt vờiReply tuyệt vời Reply tuyệt vời Reply tuyệt vời Reply tuyệt vờiReply tuyệt vời Reply tuyệt vời Reply tuyệt vời Reply tuyệt vời tuyệt vời Reply tuyệt vời  #1</p></p>
+    <div class="card-body collapse"  data-toggle="collapse"  aria-expanded="false" id="noidungcard1">
+        <h5 class="card-title">Replies</h5>
+        <p><p class="card-text">Reply tuyệt vời Reply tuyệt vời ReplyReply tuyệt vời Reply tuyệt vời Reply tuyệt vời Reply tuyệt vờiReply tuyệt vời Reply tuyệt vời Reply tuyệt vời Reply tuyệt vờiReply tuyệt vời Reply tuyệt vời Reply tuyệt vời Reply tuyệt vờiReply tuyệt vời Reply tuyệt vời Reply tuyệt vời Reply tuyệt vời tuyệt vời Reply tuyệt vời  #1</p></p>
+        <p class="card-text">Reply #2</p>
+        <p class="card-text">Reply #3</p>
+        <!--nút reply-->
+<button class="open-button" onclick="openForm()">Reply</button>
+
+<div class="form-popup" id="2">
+  <form action="######" class="form-container">
+    <h1>Nội dung comment</h1>
+    
+    <TEXTAREA NAME="RESULT_TextArea-8" ROWS="7" COLS="100"></TEXTAREA>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("2").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("2").style.display = "none";
+}
+</script>
+    </div>
+
+</div>
+</div>
+</body>
+</html>
