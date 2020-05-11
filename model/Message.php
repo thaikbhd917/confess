@@ -91,7 +91,7 @@ class Message implements JsonSerializable
     {
         return get_object_vars($this);
     }
-    function countReactLike()
+    function countLike()
     {
         if ($this->react) {
             $count = 0;
