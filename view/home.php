@@ -19,7 +19,7 @@ require_once __DIR__ . "/../index.php";
     <script src="view/js/react.js"></script>
     <script src="view/js/reply.js"></script>
     <script src="view/js/paging.js"></script>
-    <script src="view/js/loadContent.js"></script>
+    <script src="view/js/loadContents.js"></script>
 
     <script>
         function openForm() {
@@ -53,9 +53,9 @@ require_once __DIR__ . "/../index.php";
         </div>
 
 
-        <div class="confession-area col-sm-9">
+        <div class="confession-area col-sm-9" >
             <!--content 1-->
-            <div class="contents">
+            <div class="contents" id="contents">
 
                 <?php
                 foreach ($contents as $content) {
@@ -101,7 +101,7 @@ require_once __DIR__ . "/../index.php";
 
                             <input type="submit" class="btn btn-primary" value="Submit">
                             <input type="hidden" name="message_id" value="'. $content->getId() .'" />
-                            <button class="btn btn-danger" data-toggle="collapse" data-target="#input">Cancel</button>
+                            <button class="btn btn-danger" data-toggle="collapse" data-target="#input'. $content->getId() .'">Cancel</button>
                         </form>
                         </div>
                         </div> ';
@@ -121,7 +121,7 @@ require_once __DIR__ . "/../index.php";
         <!--New confession button-->
         <button class="open-button" onclick="openForm()" id="open-button">New Confession</button>
         <div class="form-popup" id="myForm">
-            <form action=confessionPost() class="form-container">
+            <form action="" class="form-container"  id="confession-form" method="POST">
                 <h4>New Confession</h4>
 
 

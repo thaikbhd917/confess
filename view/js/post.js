@@ -1,11 +1,18 @@
-import 'loadContents.js';
-function confessionPost() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            loadContents(this.responseText);
+$(function () {
+
+    $('#confession-form').on('submit', function (e) {
+
+      e.preventDefault();
+
+      $.ajax({
+        type: 'post',
+        url: 'post.php',
+        data: $('#confession-form').serialize(),
+        success: function (data) {
+         document.getElementById("contents").innerHTML=data;
         }
-    };
-    xmlhttp.open("POST", "post.php", true);
-    xmlhttp.send();
-}
+      });
+
+    });
+
+  });

@@ -2,7 +2,7 @@
 
 class Reply_DAO extends ContentsDAO{
     public function reply($reply,$reply_message_id){
-        global $conn;
+        $conn =getConnection();
         $sql = "INSERT INTO replies(reply,reply_message_id) values(?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss",$reply,$reply_message_id);
