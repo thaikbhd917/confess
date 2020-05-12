@@ -9,6 +9,7 @@ $('#confession-form').on('submit', function (e) {
     data: $('#confession-form').serialize(),
     success: function (data) {
      document.getElementById("contents").innerHTML=data;
+     location.reload();
     }
   });
 

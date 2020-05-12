@@ -9,8 +9,6 @@ $reply_dao = new Reply_DAO();
 $contents = $reply_dao->reply($reply, $message_id);
 
 
-// xu li view
-
 foreach ($contents as $content) {
     $rep = "";
     if ($content->getReplies() == null) {
