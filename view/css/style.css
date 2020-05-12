@@ -59,7 +59,10 @@ header{margin-bottom: 20px;}
   width: 73%;
   background-color: white;
 }
-#confess-text{
+#confess-input{
+  width: 100%;
+}
+#reply-input{
   width: 100%;
 }
 /* Add styles to the form container */
@@ -105,4 +108,12 @@ header{margin-bottom: 20px;}
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+.reply-input{
+  margin:10px; 
+}
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }

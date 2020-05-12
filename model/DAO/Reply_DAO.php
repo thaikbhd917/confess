@@ -1,4 +1,5 @@
 <?php
+require_once "ContentsDAO.php";
 
 class Reply_DAO extends ContentsDAO{
     public function reply($reply,$reply_message_id){

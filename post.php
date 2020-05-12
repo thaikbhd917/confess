@@ -14,9 +14,9 @@ foreach ($contents as $content) {
                 </div>
         ';}
     foreach ($content->getReplies() as $reply) {
-        $rep = ' <div class="reply collapse" id="showReply' . $content->getId() . '">
+        $rep .= ' <div class="reply collapse" id="showReply' . $content->getId() . '">
                 <h4 class="media-heading">Reply #' . $reply->getId() . ' <small><i>Posted on ' . $reply->getReplyDate() . '</i></small></h4>
-                <p> ' . $reply->getReply() . '</p>
+                <p> ' . nl2br($reply->getReply()) . '</p>
                 </div>
                 ';
     }
@@ -28,8 +28,11 @@ foreach ($contents as $content) {
         <small><i>Posted on ' . $content->getDate() . ', like ' . $content->countLike() . ' / dislike
                     ' . $content->countDislike() . '</i></small>
         </h4>
-        <p>' . $content->getMessage() . '</p>
+        <p>' .nl2br($content->getMessage()) . '</p>
     </div>
+    ' 
+    . $rep . 
+    '
     <div class="button btn-group float-right">
         <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#showReply' . $content->getId() . '">Show
         Reply
@@ -39,16 +42,14 @@ foreach ($contents as $content) {
         </button>
         <button type="button" class="btn btn-light">Like</button>
         <button type="button" class="btn btn-light">Dislike</button>
-    </div>' 
-    . $rep . 
-    '
+    </div>
     <div class="collapse reply" id="input' . $content->getId() . '">
-        <form action="reply.php" method=POST>
-            <textarea id="confess-text" placeholder=" Nhap noi dung " rows="7" name="reply"
+        <form action="" method="POST" id="reply-form'.$content->getId().'">
+            <textarea id="reply-input" placeholder=" Nhap noi dung " rows="7" name="reply"
             required></textarea>
-
-            <input type="submit" class="btn btn-primary" value="Submit">
             <input type="hidden" name="message_id" value="'. $content->getId() .'" />
+            <button type="submit" class="reply_form btn btn-primary">Submit</button>
+           
             <button class="btn btn-danger" data-toggle="collapse" data-target="#input'. $content->getId() .'">Cancel</button>
         </form>
         </div>

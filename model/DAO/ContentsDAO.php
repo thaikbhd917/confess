@@ -40,7 +40,7 @@ class ContentsDAO
         }
 
         //add property replies to message
-        $sql = "SELECT replies.* FROM messages left join replies on messages.id=replies.reply_message_id ORDER BY messages.id DESC LIMIT 10 OFFSET $offset";
+        $sql = "SELECT replies.* FROM messages left join replies on messages.id=replies.reply_message_id ORDER BY replies.id ";
         $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()) {
             if ($row == NULL) {

@@ -1,5 +1,5 @@
 <?php
-
+require_once "ContentsDAO.php";
 
 class React_DAO extends ContentsDAO
 {
